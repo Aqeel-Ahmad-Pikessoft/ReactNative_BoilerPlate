@@ -2,7 +2,7 @@
   "name": "my-rn-template",
   "version": "0.0.1",
   "description": "React Native Template",
-  "repository": "https://github.com/Aqeel-Ahmad-Pikessoft/aqeel-ahmad-rn-boilerplate.git",
+  "repository": "git@github.com:Aqeel-Ahmad-Pikessoft/ReactNative_BoilerPlate.git",
   "author": "Aqeel Ahmad Khokhar",
   "license": "MIT"
 }
