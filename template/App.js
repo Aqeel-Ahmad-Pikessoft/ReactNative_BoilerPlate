@@ -1,13 +1,17 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import {store} from './MyApp/Store';
 import {NavigationContainer} from '@react-navigation/native';
-import Navigator from './MyApp/Navigator/StackNavigator';
 import {Provider} from 'react-redux';
+import MyDrawer from './MyApp/Navigator/Drawer';
+import {ActivityIndicator} from 'react-native-paper';
+
 const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Navigator />
+        <Suspense fallback={<ActivityIndicator />}>
+          <MyDrawer />
+        </Suspense>
       </NavigationContainer>
     </Provider>
   );

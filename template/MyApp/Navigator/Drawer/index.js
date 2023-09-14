@@ -1,16 +1,15 @@
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import {HomeScreenName} from '../../Constants/ScreenName';
-import HomeScreen from '../../Containers/Home';
-
+import TabNavigator from '../TabsNavigator';
+import {TabNavigatorScreen} from '../../Constants/ScreenName';
 const Drawer = createDrawerNavigator();
 
 const MyDrawer = () => {
   return (
-    <Drawer.Navigator initialRouteName="Home">
+    <Drawer.Navigator initialRouteName="TabNavigator">
       <Drawer.Screen
-        name={HomeScreenName}
-        component={HomeScreen}
+        name={TabNavigatorScreen}
+        component={TabNavigator}
         options={{headerShown: false}}
       />
     </Drawer.Navigator>

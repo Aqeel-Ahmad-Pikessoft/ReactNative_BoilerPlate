@@ -24,6 +24,7 @@ ios/.xcode.env.local
 
 .yarn
 yarn.lock
+podfile.lock
 
 
 # Android/IntelliJ

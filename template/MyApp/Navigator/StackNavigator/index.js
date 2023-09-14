@@ -1,18 +1,34 @@
 import React from 'react';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {MyDrawerScreen} from '../../Constants/ScreenName';
-import MyDrawer from '../Drawer';
+import {createStackNavigator} from '@react-navigation/stack';
+import {HomeScreenName} from '../../Constants/ScreenName';
+import HomeScreen from '../../Containers/Home';
+import {TouchableOpacity} from 'react-native';
+import {DrawerIcon} from '../../Constants/AppIcons';
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
+
+const CustomDrawerIcon = ({navigation}) => (
+  <TouchableOpacity
+    onPress={() => {
+      navigation.toggleDrawer();
+    }}
+    style={{marginLeft: 10}}>
+    {DrawerIcon}
+  </TouchableOpacity>
+);
 
 const Navigator = () => {
   return (
     <>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Home">
         <Stack.Screen
-          name={MyDrawerScreen}
-          component={MyDrawer}
-          options={{headerShown: false}}
+          name={HomeScreenName}
+          component={HomeScreen}
+          options={({navigation}) => ({
+            headerShown: false, //true when add item in drawer
+            title: null,
+            headerLeft: () => <CustomDrawerIcon navigation={navigation} />,
+          })}
         />
       </Stack.Navigator>
     </>
